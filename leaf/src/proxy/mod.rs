@@ -153,7 +153,7 @@ async fn protect_socket<S: AsRawFd>(socket: S) -> io::Result<()> {
         if stream.read_i32().await? != 0 {
             return Err(io::Error::new(
                 io::ErrorKind::Other,
-                format!("failed to protect outbound socket {}", fd),
+                //format!("failed to protect outbound socket {}", fd),
             ));
         }
     }
